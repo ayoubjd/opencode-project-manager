@@ -1,8 +1,6 @@
 appId: com.project-manager.app
 productName: Project Manager
 copyright: Copyright © 2026
-description: Project Manager – Kanban board & table view with SQLite persistence
-author: Project Manager Team
 
 directories:
   output: dist-electron

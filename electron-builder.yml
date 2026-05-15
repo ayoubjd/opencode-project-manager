@@ -1,0 +1,43 @@
+appId: com.project-manager.app
+productName: Project Manager
+copyright: Copyright © 2026
+
+directories:
+  output: dist-electron
+
+files:
+  - "**/*"
+  # Explicitly include dot-dirs – glob patterns like **/* often skip them,
+  # and .gitignore also excludes .next/
+  - ".next/**/*"
+  - "!src/**/*"
+  - "!scripts/**/*"
+  - "!.github/**/*"
+  - "!.git/**/*"
+  - "!dist-electron/**/*"
+  - "!electron-builder.yml"
+  - "!node_modules/.cache/**/*"
+  - "!**/*.map"
+  - "!**/*.d.ts.map"
+  - "!**/*.md"
+  - "!tsconfig.json"
+  - "!eslint.config.mjs"
+  - "!postcss.config.mjs"
+  - "!prisma.config.ts"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: "${productName}-Setup-${version}.${ext}"
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+npmRebuild: true
+asar: false
